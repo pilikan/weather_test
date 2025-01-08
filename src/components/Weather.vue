@@ -19,7 +19,7 @@ const forecastWeather = computed(() => props.currentWeather.forecast.forecastday
         <h2>Forecast for {{ moment(Date.now()).format('DD.MM.YYYY') }}: </h2>
         <div class="forecast_card">
             <div class="hour_card" v-for="(hour, index) in forecastWeather" :key="index">
-                <span>{{ moment(hour.time).format('hh:mm') }}</span>
+                <span>{{ moment(hour.time).format('hh:mm A') }}</span>
                 <span>{{ Math.floor(hour.temp_c) }}°C</span>
             </div>
         </div>
